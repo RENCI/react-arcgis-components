@@ -17,18 +17,22 @@ Note that `@esri/react-arcgis` is a peer dependency of this package.
 ```jsx
 import React from 'react'
 import { Map } from '@esri/react-arcgis'
-import { Marker, Path } from 'react-esri-components'
+import { Marker, Path } from '@renci/react-esri-components'
 ```
 
 ### use
 
 ```jsx
 // path = [{ long: -78.738638, lat: 23.875623 }, ...]
-// marker = { long: -78.738638, lat: 23.875623 }
+// markers = [{ long: -78.738638, lat: 23.875623 }, ...]
 
 <Map>
   <Path coordinates={ path } />
-  <Marker key={ `marker-${ i }_-${ props.long },${ props.lat }` } { ...props } /
+  {
+    markers.map((props, i) => (
+      <Marker key={ `marker-${ i }_-${ props.long },${ props.lat }` } { ...props } />
+    ))
+  }
 </Map>
 
 ```

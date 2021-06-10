@@ -1,6 +1,6 @@
 import React from 'react'
 import { Map } from '@esri/react-arcgis'
-import { Marker, Path } from 'react-esri-components'
+import { Marker, Path } from '@renci/react-esri-components'
 import { path, markers } from './map-data'
 
 const ncCenter = { lat: 35.393809, long: -79.8431 }
